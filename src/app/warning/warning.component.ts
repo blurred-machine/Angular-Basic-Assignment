@@ -5,15 +5,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './warning.component.html',
   styleUrls: ['./warning.component.css']
 })
-export class WarningComponent implements OnInit {
+export class WarningComponent {
 
   msg_warn = ""
+  click_status = false
 
   constructor() { 
     this.msg_warn = "huuuu this is hooor!"
+    setTimeout(() => {this.click_status = true}, 3000)
   }
 
-  ngOnInit(): void {
+  onClickedByUser(){
+    this.msg_warn = "finally button is enabled and clicked by you" 
   }
 
 }
