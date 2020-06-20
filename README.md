@@ -1,6 +1,8 @@
-# FirstApp
+# AssignmentsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+This repository consists of all the assignments done by me during learning Angular Framework.
+
+This project uses generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
 
 ## Development server
 
