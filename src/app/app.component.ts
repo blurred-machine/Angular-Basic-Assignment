@@ -6,6 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'first-app paras';
+  title = 'Paras Learn Angular';
+  userName = ""
+  allowNewServer = false
+  serverCreated = false
+  serverName = ""
+
+
+  constructor(){
+    setTimeout(() => {
+      this.allowNewServer = true
+    }, 2000)
+  }
+
+  createServerBtnClick(){
+    this.serverCreated = true
+    // this.serverName = ''
+  }
+
+  onUserNameBtnClick(){
+    this.userName = ''
+  }
+
+ 
 }
 

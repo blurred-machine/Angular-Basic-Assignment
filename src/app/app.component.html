@@ -1,5 +1,32 @@
-<p>this is a message: {{title}}</p>
+<h1>{{title}}</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+
+            <!-- assignment 1 -->
+            <hr><hr><h3>Assignment Servers: </h3>
+            <input type="text" [(ngModel)]="serverName" placeholder="create new server"><br>
+            <p *ngIf="serverCreated">Server: <b> {{serverName}}</b> is created!</p>
+            <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createServerBtnClick()">Create New Server</button>
+            <app-server></app-server>
+            <app-server></app-server>
+            <app-server></app-server>
+            <br>
+            
 
 
-<app-warning></app-warning>
-<app-my-success></app-my-success>
+            <!-- assignment 2 -->
+            <hr><hr><h3>Assignment Databinding: </h3>
+            <input type="text" [(ngModel)]="userName">
+            <p>{{userName}}</p>
+            <button class="btn btn-primary" [disabled]="userName === ''" (click) = "onUserNameBtnClick()" >Create User</button>
+            <br>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- <hr><h3>Assignment Databinding: </h3><hr> -->
