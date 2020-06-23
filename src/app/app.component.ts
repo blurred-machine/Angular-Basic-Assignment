@@ -10,7 +10,12 @@ export class AppComponent {
   userName = ""
   allowNewServer = false
   serverCreated = false
-  serverName = ""
+  serverName = 0
+  serversList = []
+
+  count_data = []
+  count=0
+  count_color=''
 
 
   constructor(){
@@ -21,13 +26,21 @@ export class AppComponent {
 
   createServerBtnClick(){
     this.serverCreated = true
-    // this.serverName = ''
+    this.serversList.push(this.serverName)
   }
 
   onUserNameBtnClick(){
     this.userName = ''
   }
 
- 
+  onAddNumBtnClick(){
+    this.count += 1
+    this.count_data.push(this.count)
+    return this.count_data
+  }
+
+  getCounterColor(){
+    return this.count >= 5 ? 'LightCoral': 'GreenYellow'; 
+  }
 }
 

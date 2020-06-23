@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent {
 
   serverState = "offline"
-  server_id = -1
-  serverName = ''
+  server = ''
 
   constructor() { 
-    this.server_id =Math.round(Math.random() * 10)
-    this.serverState = this.server_id > 5 ? 'online': 'offline';
+    // this.server_id =Math.round(Math.random() * 10)
+    this.serverState = Math.random()*10 > 5 ? 'online': 'offline';
+    this.server = 'S'
   }
 
   getServerColor(){

@@ -4,24 +4,37 @@
     <div class="row">
         <div class="col-sm-6">
 
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- assignment 1 -->
-            <hr><hr><h3>Assignment Servers: </h3>
-            <input type="text" [(ngModel)]="serverName" placeholder="create new server"><br>
-            <p *ngIf="serverCreated">Server: <b> {{serverName}}</b> is created!</p>
+            <hr><hr><h3>Assignment 1 Servers: </h3>
+            <input type="text" [(ngModel)]="serverName" placeholder="create new server">
+            <p *ngIf="serverCreated else noServer">Server: <b> {{serverName}}</b> is created!</p>
+
+            <ng-template #noServer>
+                <p>No server created!</p> 
+            </ng-template>
+
             <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="createServerBtnClick()">Create New Server</button>
-            <app-server></app-server>
-            <app-server></app-server>
-            <app-server></app-server>
+            <app-server *ngFor="let server of serversList">{{server}}</app-server>
             <br>
-            
 
-
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- assignment 2 -->
-            <hr><hr><h3>Assignment Databinding: </h3>
+            <hr><hr><h3>Assignment 2 Databinding: </h3>
             <input type="text" [(ngModel)]="userName">
             <p>{{userName}}</p>
             <button class="btn btn-primary" [disabled]="userName === ''" (click) = "onUserNameBtnClick()" >Create User</button>
             <br>
+            
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- assignment 3 -->
+            <hr><hr><h3>Assignment 3 Number Counter: </h3>
+            <button class="btn btn-primary" (click) = "onAddNumBtnClick()" >Create User</button>
+            <p *ngFor='let val of count_data' [ngStyle]='{backgroundColor: getCounterColor()}' >{{val}}</p>
+
         </div>
     </div>
 
